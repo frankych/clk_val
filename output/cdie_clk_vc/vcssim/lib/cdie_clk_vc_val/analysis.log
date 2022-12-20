@@ -1,0 +1,27 @@
+env SYNOPSYS_SIM_SETUP=/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/mapfiles/vcssim.lib.cdie_clk_vc_val.map vlogan -work cdie_clk_vc_val -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/genfile_dv/vcssim/cdie_clk_vc/val/val_opts.f -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/analysis_opts.f -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/genfile_dv/vcssim/cdie_clk_vc/val/val.f 
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '4.12.14-122.60-default' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+      Version P-2019.06-SP2-6_Full64 -- Mon Dec 19 17:21:55 2022
+               Copyright (c) 1991-2019 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/src/cdie_clk_vc_env_pkg.sv'
+
+Error-[SFCOR] Source file cannot be opened
+  Source file "cdie_pm_vc_if.sv" cannot be opened for reading due to 'No such 
+  file or directory'.
+  Please fix above issue and compile again.
+  "/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/src/cdie_clk_vc_env_pkg.sv",
+  1
+  Source info: `include "cdie_pm_vc_if.sv"
+
+1 error
+CPU time: .070 seconds to compile

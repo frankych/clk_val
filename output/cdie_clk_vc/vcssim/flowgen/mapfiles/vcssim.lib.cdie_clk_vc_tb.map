@@ -1,0 +1,7 @@
+NATIVE_FILE_MACRO = 1 
+uvm_val : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/uvm_val
+saola_val_uvm : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/saola_val_uvm
+IOSF_SVC_IOSF_SVC_uvm_val_lib : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/IOSF_SVC_IOSF_SVC_uvm_val_lib
+vc_sv_pydoh_infra_val : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/vc_sv_pydoh_infra_val
+cdie_clk_vc_val : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/cdie_clk_vc_val
+cdie_clk_vc_tb : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/cdie_clk_vc_tb

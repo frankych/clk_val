@@ -1,0 +1,17 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -kdb -sverilog -sverilog +define+IOSF_SB_ENHANCEMENT +define+IOSF_SVC_DONT_INCLUDE_ADDITIONAL_AGENT_INSTANCES +define+INTEL_SIMONLY -timescale=1ps/1ps +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/uvm/src +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/ +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/includes +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/run_control_handler +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/sb_handler +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/dpi/common +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/dpi/SBAdapter +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/dpi/SignalAdapter +incdir+/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/dpi/RunControlAdapter -work vc_sv_pydoh_infra_val -full64
+
+all :		_VCSgd_3NMz9c_1.db \
+	_VCSgd_CKcqBb_1.db \
+
+
+
+_VCSgd_3NMz9c_1.db :	/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/sv_pydoh_infra_env_pkg.sv 
+		${VLOGAN}  ${VLOGAN_OPT} /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/src/verif/sv_pydoh_infra_env_pkg.sv
+
+
+_VCSgd_CKcqBb_1.db :	/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/verif/tb/sv_pydoh_infra_ti.sv 
+		${VLOGAN}  ${VLOGAN_OPT} /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/subip/vip/vc_sv_pydoh_infra/verif/tb/sv_pydoh_infra_ti.sv
+
+

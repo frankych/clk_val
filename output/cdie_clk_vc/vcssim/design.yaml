@@ -1,0 +1,90 @@
+---
+global:
+  analysis_opts: output/cdie_clk_vc/vcssim/analysis_opts.f
+  top_ip_name: cdie_clk_vc
+ip:
+  IOSF_SVC:
+    filelist_specs:
+      IOSF_SVC_uvm_val_lib:
+        analysis_opts: output/cdie_clk_vc/genfile_dv/vcssim/IOSF_SVC/val/IOSF_SVC_uvm_val_lib_opts.f
+        category: val
+        depends_on:
+        - uvm:val
+        - saola:val_uvm
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/IOSF_SVC/val/IOSF_SVC_uvm_val_lib.f
+        language: systemverilog2012
+        library_name: IOSF_SVC_IOSF_SVC_uvm_val_lib
+    type: vip
+  cdie_clk_vc:
+    filelist_specs:
+      tb:
+        category: val
+        depends_on:
+        - uvm:val
+        - saola:val_uvm
+        - IOSF_SVC:IOSF_SVC_uvm_val_lib
+        - vc_sv_pydoh_infra:val
+        - cdie_clk_vc:val
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/cdie_clk_vc/val/tb.f
+        language: systemverilog2012
+        library_name: cdie_clk_vc_tb
+      val:
+        analysis_opts: output/cdie_clk_vc/genfile_dv/vcssim/cdie_clk_vc/val/val_opts.f
+        category: val
+        depends_on:
+        - uvm:val
+        - saola:val_uvm
+        - IOSF_SVC:IOSF_SVC_uvm_val_lib
+        - vc_sv_pydoh_infra:val
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/cdie_clk_vc/val/val.f
+        language: systemverilog2012
+        library_name: cdie_clk_vc_val
+    type: vip
+  saola:
+    filelist_specs:
+      val_uvm:
+        analysis_opts: output/cdie_clk_vc/genfile_dv/vcssim/saola/val/val_uvm_opts.f
+        category: val
+        depends_on:
+        - uvm:val
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/saola/val/val_uvm.f
+        language: systemverilog2012
+        library_name: saola_val_uvm
+    type: vip
+  uvm:
+    filelist_specs:
+      val:
+        analysis_opts: output/cdie_clk_vc/genfile_dv/vcssim/uvm/val/val_opts.f
+        category: val
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/uvm/val/val.f
+        language: systemverilog2012
+        library_name: uvm_val
+    type: vip
+  vc_sv_pydoh_infra:
+    filelist_specs:
+      val:
+        analysis_opts: output/cdie_clk_vc/genfile_dv/vcssim/vc_sv_pydoh_infra/val/val_opts.f
+        category: val
+        depends_on:
+        - uvm:val
+        - saola:val_uvm
+        - IOSF_SVC:IOSF_SVC_uvm_val_lib
+        filelist: output/cdie_clk_vc/genfile_dv/vcssim/vc_sv_pydoh_infra/val/val.f
+        language: systemverilog2012
+        library_name: vc_sv_pydoh_infra_val
+    type: vip
+models:
+  cdie_clk_vc_model:
+    filelist_specs:
+    - uvm:val
+    - saola:val_uvm
+    - IOSF_SVC:IOSF_SVC_uvm_val_lib
+    - vc_sv_pydoh_infra:val
+    - cdie_clk_vc:val
+    - cdie_clk_vc:tb
+    flows:
+      vcssim:
+        elab_opts: output/cdie_clk_vc/vcssim/elab_opts.f
+    test_modes:
+    - tim
+    top: cdie_clk_vc_tb

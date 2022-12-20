@@ -1,0 +1,3 @@
+NATIVE_FILE_MACRO = 1 
+uvm_val : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/uvm_val
+saola_val_uvm : /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/saola_val_uvm

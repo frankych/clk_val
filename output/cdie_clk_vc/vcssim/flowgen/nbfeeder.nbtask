@@ -1,0 +1,133 @@
+Task vcssim_flow_cdie_clk_vc_frankych_2022_12_19_17_21_44_1671499304
+{
+  WorkArea /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea
+  SubmissionArgs --class ""
+  SchedulingMethod Priority
+
+  Queue pdx_normal
+  {
+    MaxWaiting 100
+    MaxJobs 50
+    Qslot /pesg/fast
+  }
+
+  Policy gen_summary_mid
+  {
+  
+    Schedule
+    {
+      Recurrence 5m
+      IfTrue RunScript script="/p/hdk/pu_tu/prd/crb/master/2021.09.fe.CRB.2.21.5/scripts/flow_summary.pl -task_name vcssim_flow_cdie_clk_vc_frankych_2022_12_19_17_21_44_1671499304 -flow vcssim"
+    }
+  
+  }
+
+  Policy gen_summary_end
+  {
+  
+    Condition Status=="Completed"||Status=="Canceling"||Status=="Canceled"||Status=="Deleting"||Status=="Deleting Canceling"
+    {
+      IfTrue RunScript script="/p/hdk/pu_tu/prd/crb/master/2021.09.fe.CRB.2.21.5/scripts/flow_summary.pl -task_name vcssim_flow_cdie_clk_vc_frankych_2022_12_19_17_21_44_1671499304 -flow vcssim" 
+    }
+  
+  }
+
+  Task vcssim.lib.uvm_val
+  {
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.uvm_val.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.uvm_val,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.uvm_val
+    }
+  
+  }
+
+  Task vcssim.lib.saola_val_uvm
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.saola_val_uvm.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.saola_val_uvm,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.saola_val_uvm
+    }
+  
+  }
+
+  Task vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+    DependsOn vcssim.lib.saola_val_uvm[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib
+    }
+  
+  }
+
+  Task vcssim.lib.vc_sv_pydoh_infra_val
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+    DependsOn vcssim.lib.saola_val_uvm[OnSuccess]
+    DependsOn vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.vc_sv_pydoh_infra_val.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.vc_sv_pydoh_infra_val,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.vc_sv_pydoh_infra_val
+    }
+  
+  }
+
+  Task vcssim.lib.cdie_clk_vc_val
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+    DependsOn vcssim.lib.saola_val_uvm[OnSuccess]
+    DependsOn vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib[OnSuccess]
+    DependsOn vcssim.lib.vc_sv_pydoh_infra_val[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.cdie_clk_vc_val.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.cdie_clk_vc_val,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.cdie_clk_vc_val
+    }
+  
+  }
+
+  Task vcssim.lib.cdie_clk_vc_tb
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+    DependsOn vcssim.lib.saola_val_uvm[OnSuccess]
+    DependsOn vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib[OnSuccess]
+    DependsOn vcssim.lib.vc_sv_pydoh_infra_val[OnSuccess]
+    DependsOn vcssim.lib.cdie_clk_vc_val[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.lib.cdie_clk_vc_tb.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.lib.cdie_clk_vc_tb,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.lib.cdie_clk_vc_tb
+    }
+  
+  }
+
+  Task vcssim.model.cdie_clk_vc_model
+  {
+    DependsOn vcssim.lib.uvm_val[OnSuccess]
+    DependsOn vcssim.lib.saola_val_uvm[OnSuccess]
+    DependsOn vcssim.lib.IOSF_SVC_IOSF_SVC_uvm_val_lib[OnSuccess]
+    DependsOn vcssim.lib.vc_sv_pydoh_infra_val[OnSuccess]
+    DependsOn vcssim.lib.cdie_clk_vc_val[OnSuccess]
+    DependsOn vcssim.lib.cdie_clk_vc_tb[OnSuccess]
+  
+    Jobs
+    {
+      nbjob run --log-file /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea/vcssim.model.cdie_clk_vc_model.log --work-dir /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/feeder_workarea   --properties predictionhelper=crb_vcssim_cdie_clk_vc_vcssim.model.cdie_clk_vc_model,PredictionEntity=crb_vcssim /usr/intel/pkgs/gmake/4.2.1/bin/gmake -f /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/flowgen/Makefile vcssim.model.cdie_clk_vc_model
+    }
+  
+  }
+
+  Environment
+  {
+    setenv WORKAREA /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc
+    setenv OUTPUT_DIR /nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output
+    setenv CRB /p/hdk/pu_tu/prd/crb/master/2021.09.fe.CRB.2.21.5
+  }
+
+}

@@ -1,0 +1,32 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 262144 bytes [need 256K bytes if disable swap]
+
+used block: 410 [memory(4) file(406)]
+                 [ 64K(410) { total 26M bytes } ]
+overhead: (142068) bytes for (410) blocks [Average: (346) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 0(times) 0K(bytes) [0K bytes compressed data from file]
+access => 0(times) 0K(bytes)
+          [hit ratio: 0%]
+
+time: write(0) read(0)  unit: second
+
+swap file directory: (/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/uvm_val/tmp/libnz4w_r.soLog)
+used swap file number: (0)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (2)
+closeHead: (0)
+closeTail: (0)
+openCnt: (0)
+fid(1): fd(0) fileName(/nfs/site/disks/arl_frankych_wa_01/NVL_CLK_VAL/frameworks.validation.vip.clock-vc/output/cdie_clk_vc/vcssim/lib/uvm_val/tmp/libnz4w_r.soLog/_swap_0001#1946846722#13850)
+	size(0) lastModTime(0) curModTime(1671499307)
+	mode(w+b)	hot(0) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)
